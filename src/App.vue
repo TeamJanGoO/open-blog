@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+
 import TopBar from './components/Navigation/TobBar.vue'
+import SideBar from './components/Navigation/SideBar.vue'
 </script>
 
 <template>
-  <TopBar/>
+  <TopBar />
+  <SideBar />
   <RouterView />
 </template>
 
