@@ -10,7 +10,8 @@ onMounted(() => {
     if (e.key === '/') {
         e.preventDefault()
         searchText.value = ''
-        document.getElementById('search-input').focus()
+        const searchInput: any | null = document.getElementById('search-input')
+        searchInput.focus()
     }
   })
 })
