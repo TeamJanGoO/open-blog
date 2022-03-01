@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+import { useThemeStore } from '@/stores/themeStore'
+
 const input: any = ref(null)
 
 onMounted(() => {
@@ -36,7 +38,8 @@ onMounted(() => {
         </div>
         <input
             ref="input"
-            class="transition-all duration-300 bg-transparent focus:bg-white hover:bg-white placeholder-[#ACBADB] text-[#ACBADB] tracking-[0.75px] pl-16 w-full h-full border-2 border-[#EEF1F8] focus:border-[#EEF1F8] focus:ring-0 focus:ring-[#EEF1F8] focus:shadow-xl focus:shadow-gray-200/50 rounded-lg focus:outline-none"
+            class="transition-all duration-300 delay-300 tracking-[0.75px] pl-16 w-full h-full border-2 rounded-lg focus:outline-none"
+            :class="{ 'bg-transparent focus:bg-white hover:bg-white placeholder-[#ACBADB] text-[#ACBADB] border-[#EEF1F8] focus:border-[#EEF1F8] focus:ring-0 focus:ring-[#EEF1F8] focus:shadow-xl focus:shadow-gray-200/50': useThemeStore().theme === 'light', 'bg-[#1D1E26] focus:bg-[#171821] hover:bg-[#171821] placeholder-[#ACBADB] text-[#ACBADB] border-[#2A2D3D]': useThemeStore().theme === 'dark' }"
             type="text"
             id="search"
             name="search"
@@ -45,7 +48,8 @@ onMounted(() => {
             placeholder="i.e., UI/UX, Web Development, etc."
         />
         <div
-            class="absolute top-0 bottom-0 right-0 flex justify-center items-center px-5 h-full rounded-tr-lg rounded-br-lg border-2 border-[#EEF1F8] bg-[#FCFDFE] text-[#ACBADB] text-2xl"
+            class="transition-all duration-300 delay-300 absolute top-0 bottom-0 right-0 flex justify-center items-center px-5 h-full rounded-tr-lg rounded-br-lg border-2 text-[#ACBADB] text-2xl"
+            :class="{ 'border-[#EEF1F8] bg-[#FCFDFE]': useThemeStore().theme === 'light', 'border-[#2A2D3D] bg-[#1D1E26]': useThemeStore().theme === 'dark' }"
         >/</div>
     </div>
 </template>

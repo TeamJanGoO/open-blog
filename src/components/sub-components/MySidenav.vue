@@ -6,6 +6,7 @@ import MailIcon from '@/assets/icons/MailIcon.vue'
 import ShareIcon from '@/assets/icons/ShareIcon.vue'
 
 import { ref } from 'vue'
+import { useThemeStore } from '@/stores/themeStore'
 
 const states = ref(['active', 'default', 'default', 'default', 'default'])
 
@@ -41,7 +42,7 @@ const clickActivate = (i: number) => {
             :class="{ 'activated': states[0] === 'active' }"
         >
             <FeedIcon :state="states[0]" />
-            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Feed</span>
+            <span class="transition-all duration-300 tooltiptext top-0 mt-2 py-[4px] px-[15px]" :class="{ 'bg-white border-[1px] border-[#EEF1F8] [box-shadow:-1px_4px_4px_0px_#9CAACC0D]': useThemeStore().theme === 'light', 'bg-[#1D1E26] border-[1px] border-[#3A3D4A] [box-shadow:-1px_4px_4px_rgba(0,0,0,0.05)]': useThemeStore().theme === 'dark' }">Feed</span>
         </div>
         <div
             @mouseenter="hoverActivate(1)"
@@ -51,7 +52,7 @@ const clickActivate = (i: number) => {
             :class="{ 'activated': states[1] === 'active' }"
         >
             <HashIcon :state="states[1]" />
-            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Topics</span>
+            <span class="transition-all duration-300 tooltiptext top-0 mt-2 py-[4px] px-[15px]" :class="{ 'bg-white border-[1px] border-[#EEF1F8] [box-shadow:-1px_4px_4px_0px_#9CAACC0D]': useThemeStore().theme === 'light', 'bg-[#1D1E26] border-[1px] border-[#3A3D4A] [box-shadow:-1px_4px_4px_rgba(0,0,0,0.05)]': useThemeStore().theme === 'dark' }">Topics</span>
         </div>
         <div
             @mouseenter="hoverActivate(2)"
@@ -61,7 +62,7 @@ const clickActivate = (i: number) => {
             :class="{ 'activated': states[2] === 'active' }"
         >
             <BellIcon :state="states[2]" />
-            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Subscribe</span>
+            <span class="transition-all duration-300 tooltiptext top-0 mt-2 py-[4px] px-[15px]" :class="{ 'bg-white border-[1px] border-[#EEF1F8] [box-shadow:-1px_4px_4px_0px_#9CAACC0D]': useThemeStore().theme === 'light', 'bg-[#1D1E26] border-[1px] border-[#3A3D4A] [box-shadow:-1px_4px_4px_rgba(0,0,0,0.05)]': useThemeStore().theme === 'dark' }">Subscribe</span>
         </div>
         <div
             @mouseenter="hoverActivate(3)"
@@ -71,17 +72,17 @@ const clickActivate = (i: number) => {
             :class="{ 'activated': states[3] === 'active' }"
         >
             <MailIcon :state="states[3]" />
-            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px] whitespace-nowrap">Contact Us</span>
+            <span class="transition-all duration-300 tooltiptext top-0 mt-2 py-[4px] px-[15px] whitespace-nowrap" :class="{ 'bg-white border-[1px] border-[#EEF1F8] [box-shadow:-1px_4px_4px_0px_#9CAACC0D]': useThemeStore().theme === 'light', 'bg-[#1D1E26] border-[1px] border-[#3A3D4A] [box-shadow:-1px_4px_4px_rgba(0,0,0,0.05)]': useThemeStore().theme === 'dark' }">Contact Us</span>
         </div>
         <div
             @mouseenter="hoverActivate(4)"
             @mouseleave="hoverDeactivate(4)"
             @click="clickActivate(4)"
-            class="tooltip p-2 cursor-pointer"
+            class="transition-all duration-300 tooltip p-2 cursor-pointer"
             :class="{ 'activated': states[4] === 'active' }"
         >
             <ShareIcon :state="states[4]" />
-            <span class="tooltiptext top-1/2 -translate-y-1/2 py-[4px] px-[15px]">Share</span>
+            <span class="tooltiptext top-1/2 -translate-y-1/2 py-[4px] px-[15px]" :class="{ 'bg-white border-[1px] border-[#EEF1F8] [box-shadow:-1px_4px_4px_0px_#9CAACC0D]': useThemeStore().theme === 'light', 'bg-[#1D1E26] border-[1px] border-[#3A3D4A] [box-shadow:-1px_4px_4px_rgba(0,0,0,0.05)]': useThemeStore().theme === 'dark' }">Share</span>
         </div>
     </div>
 </template>
@@ -94,20 +95,17 @@ const clickActivate = (i: number) => {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    background-color: #FFFFFF;
     color: #4F72C6;
     font-weight: bold;
     font-size: 11px;
     line-height: 150%;
     text-align: center;
-    border: solid 1px #EEF1F8;
     border-radius: 5px;
     position: absolute;
     left: 340%;
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
-    box-shadow: -1px 4px 4px 0px #9CAACC0D;
 }
 
 .tooltip:hover .tooltiptext {

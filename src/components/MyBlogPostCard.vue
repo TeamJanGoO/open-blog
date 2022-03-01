@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import MyTagBadge from "./sub-components/MyTagBadge.vue";
+import MyTagBadge from "./sub-components/MyTagBadge.vue"
+import { useThemeStore } from "@/stores/themeStore"
 
 </script>
 
 <template>
-    <div class="w-full rounded-[15px] border-2 border-[#EEF1F8] bg-white pt-[30px] pb-[29px] px-[50px] flex flex-col">
+    <div class="transition-all duration-300 w-full rounded-[15px] border-2 pt-[30px] pb-[29px] px-[50px] flex flex-col"
+    :class="{ 'border-[#EEF1F8] bg-white': useThemeStore().theme === 'light', 'border-[#2A2D3D] bg-[#1D1E26]': useThemeStore().theme === 'dark' }">
         <div class="flex gap-5">
             <div class="flex gap-3">
                 <img src="@/assets/icons/eye.svg" alt="Eye SVG">
@@ -16,7 +18,8 @@ import MyTagBadge from "./sub-components/MyTagBadge.vue";
             </div>
         </div>
         <div class="mb-[10px]">
-            <h1 class="text-[#1E4571] text-[24px] lg:text-[36px] font-bold my-3 lg:my-0 leading-[28px] lg:leading-[49px]">When will the COVID-19 pandemic end?</h1>
+            <h1 class="transition-all duration-300 text-[24px] lg:text-[36px] font-bold my-3 lg:my-0 leading-[28px] lg:leading-[49px]"
+            :class="{ 'text-[#1E4571]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }">When will the COVID-19 pandemic end?</h1>
         </div>
         <div class="mb-[20px]">
             <p class="text-[#959FB6] text-[18px] leading-[28px] line-clamp-4">

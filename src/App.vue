@@ -4,6 +4,7 @@ import MySidebar from './components/MySidebar.vue'
 import MyTopbar from './components/MyTopbar.vue'
 
 import { useMobileSidebarStore } from './stores/mobileSidebarStore'
+import { useThemeStore } from './stores/themeStore'
 
 window.addEventListener('resize', () => {
   useMobileSidebarStore().isVisible = false
@@ -11,7 +12,7 @@ window.addEventListener('resize', () => {
 </script>
 
 <template>
-  <div class="overflow-hidden">
+  <div class="overflow-hidden" :class="{ 'bg-[#FCFDFE]': useThemeStore().theme === 'light', 'bg-[#171821]': useThemeStore().theme === 'dark' }">
     <MyTopbar />
     <MySidebar />
     <div

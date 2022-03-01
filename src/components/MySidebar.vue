@@ -2,11 +2,13 @@
 import MySidenav from "./sub-components/MySidenav.vue"
 import MyMobileSidebar from './MyMobileSidebar.vue'
 import { useMobileSidebarStore } from '@/stores/mobileSidebarStore'
+import { useThemeStore } from '@/stores/themeStore'
 </script>
 
 <template>
     <div
-        class="hidden fixed top-0 left-0 w-[114px] h-screen bg-white pt-[162px] lg:flex md:justify-end border-r-[1px] border-[#ACBADB33]"
+        class="transition-all duration-300 hidden fixed top-0 left-0 w-[114px] h-screen pt-[162px] lg:flex md:justify-end border-r-[1px] border-[#ACBADB33]"
+        :class="{ 'bg-white': useThemeStore().theme === 'light', 'bg-[#1D1E26]': useThemeStore().theme === 'dark' }"
     >
         <MySidenav />
     </div>

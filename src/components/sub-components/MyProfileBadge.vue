@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useThemeStore } from '@/stores/themeStore'
+
 const props = defineProps({
     img: {
         type: String,
@@ -22,8 +24,10 @@ const props = defineProps({
             <img class="rounded-full w-[46px] h-[46px]" :src="props.img" :alt="props.name">
         </div>
         <div class="flex flex-col">
-            <span class="text-[18px] text-[#5F7097] font-bold whitespace-nowrap">{{ props.name }}</span>
-            <span class="text-[10px] text-[#5F7097] whitespace-nowrap"># {{ props.tag }}</span>
+            <span class="text-[18px] font-bold whitespace-nowrap"
+            :class="{ 'text-[#5F7097]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }">{{ props.name }}</span>
+            <span class="text-[10px] text-[#5F7097] whitespace-nowrap"
+            :class="{ 'text-[#5F7097]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }"># {{ props.tag }}</span>
         </div>
     </div>
 </template>
