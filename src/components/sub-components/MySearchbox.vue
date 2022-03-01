@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="w-4/3 lg:w-[600px] h-[54px] relative">
+    <div class="w-full h-[54px] relative">
         <div class="absolute top-1/2 -translate-y-1/2 left-0 ml-6">
             <svg
                 width="25"
@@ -36,14 +36,16 @@ onMounted(() => {
         </div>
         <input
             ref="input"
-            class="transition-all duration-700 bg-transparent focus:bg-white hover:bg-white placeholder-[#ACBADB] text-[#ACBADB] tracking-[0.75px] pl-16 w-full h-full border-2 border-[#EEF1F8] focus:border-[#EEF1F8] focus:ring-0 focus:ring-[#EEF1F8] rounded-lg focus:outline-none"
+            class="transition-all duration-300 bg-transparent focus:bg-white hover:bg-white placeholder-[#ACBADB] text-[#ACBADB] tracking-[0.75px] pl-16 w-full h-full border-2 border-[#EEF1F8] focus:border-[#EEF1F8] focus:ring-0 focus:ring-[#EEF1F8] focus:shadow-xl focus:shadow-gray-200/50 rounded-lg focus:outline-none"
             type="text"
             id="search"
             name="search"
-            placeholder="Search Keywords in Our Blog (i.e., UI/UX, Development, Web ...)"
+            autocomplete="off"
+            saved-value=""
+            placeholder="i.e., UI/UX, Web Development, etc."
         />
         <div
-            class="hidden absolute top-0 bottom-0 right-0 xl:flex justify-center items-center px-5 h-full border-l-2 border-[#EEF1F8] text-[#ACBADB] text-2xl"
+            class="absolute top-0 bottom-0 right-0 flex justify-center items-center px-5 h-full rounded-tr-lg rounded-br-lg border-2 border-[#EEF1F8] bg-[#FCFDFE] text-[#ACBADB] text-2xl"
         >/</div>
     </div>
 </template>

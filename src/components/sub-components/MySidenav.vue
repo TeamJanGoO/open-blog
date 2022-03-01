@@ -32,46 +32,46 @@ const clickActivate = (i: number) => {
 </script>
 
 <template>
-    <div class="p-2 flex flex-col gap-y-[43px]">
+    <div class="p-2 flex flex-col">
         <div
             @mouseenter="hoverActivate(0)"
             @mouseleave="hoverDeactivate(0)"
             @click="clickActivate(0)"
-            class="tooltip p-2 cursor-pointer"
+            class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[0] === 'active' }"
         >
             <FeedIcon :state="states[0]" />
-            <span class="tooltiptext py-[4px] px-[15px]">Feed</span>
+            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Feed</span>
         </div>
         <div
             @mouseenter="hoverActivate(1)"
             @mouseleave="hoverDeactivate(1)"
             @click="clickActivate(1)"
-            class="tooltip p-2 cursor-pointer"
+            class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[1] === 'active' }"
         >
             <HashIcon :state="states[1]" />
-            <span class="tooltiptext py-[4px] px-[15px]">Topics</span>
+            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Topics</span>
         </div>
         <div
             @mouseenter="hoverActivate(2)"
             @mouseleave="hoverDeactivate(2)"
             @click="clickActivate(2)"
-            class="tooltip p-2 cursor-pointer"
+            class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[2] === 'active' }"
         >
             <BellIcon :state="states[2]" />
-            <span class="tooltiptext py-[4px] px-[15px]">Subscribe</span>
+            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px]">Subscribe</span>
         </div>
         <div
             @mouseenter="hoverActivate(3)"
             @mouseleave="hoverDeactivate(3)"
             @click="clickActivate(3)"
-            class="tooltip p-2 cursor-pointer"
+            class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[3] === 'active' }"
         >
             <MailIcon :state="states[3]" />
-            <span class="tooltiptext py-[4px] px-[15px] whitespace-nowrap">Contact Us</span>
+            <span class="tooltiptext top-0 mt-2 py-[4px] px-[15px] whitespace-nowrap">Contact Us</span>
         </div>
         <div
             @mouseenter="hoverActivate(4)"
@@ -81,7 +81,7 @@ const clickActivate = (i: number) => {
             :class="{ 'activated': states[4] === 'active' }"
         >
             <ShareIcon :state="states[4]" />
-            <span class="tooltiptext py-[4px] px-[15px]">Share</span>
+            <span class="tooltiptext top-1/2 -translate-y-1/2 py-[4px] px-[15px]">Share</span>
         </div>
     </div>
 </template>
@@ -103,9 +103,7 @@ const clickActivate = (i: number) => {
     border: solid 1px #EEF1F8;
     border-radius: 5px;
     position: absolute;
-    bottom: 50%;
     left: 340%;
-    transform: translateY(50%);
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
