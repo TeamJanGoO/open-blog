@@ -33,7 +33,7 @@ window.addEventListener('scroll', () => {
 <template>
     <div
         class="transition-all duration-300 md:fixed md:top-0 md:left-0 pl-[20px] lg:pl-[160px] xl:pl-[269px] pr-[20px] lg:pr-[48px] w-full h-[100px] md:h-[142px] flex gap-x-12 xl:gap-x-24 justify-between items-center"
-        :class="{ 'shadow-xl shadow-gray-100/50 !h-[90px]': scrolled && useThemeStore().theme === 'light', 'bg-[#FCFDFE]': useThemeStore().theme === 'light', 'bg-[#171821]': useThemeStore().theme === 'dark' }"
+        :class="{ 'shadow-xl shadow-gray-100/50 !h-[90px] !bg-white': scrolled && useThemeStore().theme === 'light', 'bg-[#FCFDFE]': useThemeStore().theme === 'light', 'bg-[#171821]': useThemeStore().theme === 'dark' }"
     >
         <div class="flex justify-center items-center gap-x-[20px] md:gap-x-[48px]">
             <svg
