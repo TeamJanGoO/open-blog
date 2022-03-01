@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <button class="capitalize flex gap-2 bg-[#007AFF] rounded-[18px] [padding:8px_12px_8px_16px] [box-shadow:0px_4px_9px_rgba(0,122,255,0.19)]" type="button">
+    <button class="transition-all duration-300 hover:-translate-y-1 capitalize flex gap-2 bg-[#007AFF] rounded-[18px] [padding:8px_12px_8px_16px] [box-shadow:0px_4px_9px_rgba(0,122,255,0.19)]" type="button">
         <span class="text-[11px] text-white font-medium">{{ props.text }}</span>
         <span>
             <svg
