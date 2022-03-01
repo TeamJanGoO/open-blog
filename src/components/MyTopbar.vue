@@ -8,6 +8,7 @@ import { useMobileSidebarStore } from '@/stores/mobileSidebarStore'
 import { ref } from 'vue'
 
 const theme = ref('light')
+const scrolled = ref(false)
 
 const toggleTheme = () => {
     if (theme.value === 'light') {
@@ -16,11 +17,20 @@ const toggleTheme = () => {
         theme.value = 'light'
     }
 }
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        scrolled.value = true
+    } else {
+        scrolled.value = false
+    }
+})
 </script>
 
 <template>
     <div
-        class="transition-all duration-500 md:fixed md:top-0 md:left-0 pl-[20px] lg:pl-[160px] xl:pl-[269px] pr-[20px] lg:pr-[48px] w-full h-[100px] md:h-[142px] flex gap-x-12 xl:gap-x-24 justify-between items-center"
+        class="transition-all duration-500 md:fixed md:top-0 md:left-0 pl-[20px] lg:pl-[160px] xl:pl-[269px] pr-[20px] lg:pr-[48px] w-full h-[100px] md:h-[142px] flex gap-x-12 xl:gap-x-24 justify-between items-center bg-[#FCFDFE]"
+        :class="{ 'shadow-xl shadow-gray-100/50': scrolled }"
     >
         <div class="flex justify-center items-center gap-x-[20px] md:gap-x-[48px]">
             <svg
