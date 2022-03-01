@@ -3,6 +3,7 @@ import MyBlogPostCard from "../components/MyBlogPostCard.vue";
 import MyProfileBadge from "../components/sub-components/MyProfileBadge.vue";
 import MyButton from "../components/sub-components/MyButton.vue";
 import MyTagBadge from "../components/sub-components/MyTagBadge.vue";
+import { ref } from "vue";
 
 const loremIpsumWords = [
     "Lorem",
@@ -28,16 +29,18 @@ const loremIpsumWords = [
     "enim"
 ];
 
+const posts = ref(3)
+
 </script>
 
 <template>
   <div class="flex flex-col xl:flex-row gap-[20px] xl:gap-[60px]">
     <div class="flex flex-col gap-[20px] xl:gap-[60px] pb-24">
-      <div v-for="(item, index) in 3" :key="index">
+      <div v-for="(item, index) in posts" :key="index">
         <MyBlogPostCard />
       </div>
       <div class="w-full flex justify-center items-center">
-        <MyButton text="learn more" />
+        <MyButton @click="posts += 3" text="load more" />
       </div>
     </div>
     <div class="hidden w-full min-w-[300px] max-w-fit xl:max-w-[350px] pb-20 xl:pb-0 lg:flex flex-row xl:flex-col gap-[20px] xl:gap-[60px]">
