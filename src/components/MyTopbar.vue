@@ -7,6 +7,7 @@ import { useMobileSidebarStore } from '@/stores/mobileSidebarStore'
 import { useThemeStore } from '@/stores/themeStore'
 
 import { ref } from 'vue'
+import SearchIcon from '../assets/icons/SearchIcon.vue'
 
 const theme = ref('light')
 const scrolled = ref(false)
@@ -32,7 +33,7 @@ window.addEventListener('scroll', () => {
 <template>
     <div
         class="transition-all duration-300 md:fixed md:top-0 md:left-0 pl-[20px] lg:pl-[160px] xl:pl-[269px] pr-[20px] lg:pr-[48px] w-full h-[100px] md:h-[142px] flex gap-x-12 xl:gap-x-24 justify-between items-center bg-[#FCFDFE]"
-        :class="{ 'shadow-xl shadow-gray-100/50': scrolled && useThemeStore().theme === 'light', 'bg-[#FCFDFE]': useThemeStore().theme === 'light', 'bg-[#171821]': useThemeStore().theme === 'dark' }"
+        :class="{ 'shadow-xl shadow-gray-100/50 !h-[90px]': scrolled && useThemeStore().theme === 'light', 'bg-[#FCFDFE]': useThemeStore().theme === 'light', 'bg-[#171821]': useThemeStore().theme === 'dark' }"
     >
         <div class="flex justify-center items-center gap-x-[20px] md:gap-x-[48px]">
             <svg
@@ -83,12 +84,23 @@ window.addEventListener('scroll', () => {
             <MySearchbox />
         </div>
         <div class="flex gap-x-6 md:gap-x-12">
-            <div @click="toggleTheme" class="transition-all duration-300 p-1 rounded-full cursor-pointer"
-             :class="{ 'hover:bg-gray-100': useThemeStore().theme === 'light', 'hover:bg-[#171821]': useThemeStore().theme === 'dark' }">
+            <div
+                class="transition-all duration-300 block lg:hidden p-1 rounded-full cursor-pointer"
+                :class="{ 'hover:bg-gray-100': useThemeStore().theme === 'light', 'hover:bg-[#171821]': useThemeStore().theme === 'dark' }"
+            >
+                <SearchIcon />
+            </div>
+            <div
+                @click="toggleTheme"
+                class="transition-all duration-300 p-1 rounded-full cursor-pointer"
+                :class="{ 'hover:bg-gray-100': useThemeStore().theme === 'light', 'hover:bg-[#171821]': useThemeStore().theme === 'dark' }"
+            >
                 <ThemeIcon :theme="theme" />
             </div>
-            <div class="transition-all duration-300 hidden lg:block p-1 rounded-full cursor-pointer"
-            :class="{ 'hover:bg-gray-100': useThemeStore().theme === 'light', 'hover:bg-[#171821]': useThemeStore().theme === 'dark' }">
+            <div
+                class="transition-all duration-300 hidden lg:block p-1 rounded-full cursor-pointer"
+                :class="{ 'hover:bg-gray-100': useThemeStore().theme === 'light', 'hover:bg-[#171821]': useThemeStore().theme === 'dark' }"
+            >
                 <InfoIcon />
             </div>
         </div>

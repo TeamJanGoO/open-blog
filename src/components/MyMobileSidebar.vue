@@ -26,7 +26,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <FeedIcon />
                         </div>
                         <div class="transition-all duration-300 border-b-[1px] py-[18px] flex-grow" :class="{ 'border-[#EEF1F8]': useThemeStore().theme === 'light', 'border-[#ffffff04]': useThemeStore().theme === 'dark' }">
-                            <a class="text-[14px] text-[#4F72C6] font-bold" href="#">Feed</a>
+                            <a class="text-[14px] text-[#818BA5] font-bold" href="#">Feed</a>
                         </div>
                     </div>
                     <div class="w-full flex gap-[29px] items-center">
@@ -34,7 +34,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <HashIcon />
                         </div>
                         <div class="transition-all duration-300 border-b-[1px] py-[18px] flex-grow" :class="{ 'border-[#EEF1F8]': useThemeStore().theme === 'light', 'border-[#ffffff04]': useThemeStore().theme === 'dark' }">
-                            <a class="text-[14px] text-[#4F72C6] font-bold" href="#">Topics</a>
+                            <a class="text-[14px] text-[#818BA5] font-bold" href="#">Topics</a>
                         </div>
                     </div>
                     <div class="w-full flex gap-[29px] items-center">
@@ -42,7 +42,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <BellIcon />
                         </div>
                         <div class="transition-all duration-300 border-b-[1px] py-[18px] flex-grow" :class="{ 'border-[#EEF1F8]': useThemeStore().theme === 'light', 'border-[#ffffff04]': useThemeStore().theme === 'dark' }">
-                            <a class="text-[14px] text-[#4F72C6] font-bold" href="#">Subscribe</a>
+                            <a class="text-[14px] text-[#818BA5] font-bold" href="#">Subscribe</a>
                         </div>
                     </div>
                     <div class="w-full flex gap-[29px] items-center">
@@ -50,7 +50,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <MailIcon />
                         </div>
                         <div class="transition-all duration-300 border-b-[1px] py-[18px] flex-grow" :class="{ 'border-[#EEF1F8]': useThemeStore().theme === 'light', 'border-[#ffffff04]': useThemeStore().theme === 'dark' }">
-                            <a class="text-[14px] text-[#4F72C6] font-bold whitespace-nowrap" href="#">Contact Us</a>
+                            <a class="text-[14px] text-[#818BA5] font-bold whitespace-nowrap" href="#">Contact Us</a>
                         </div>
                     </div>
                     <div class="w-full flex gap-[29px] items-center">
@@ -58,7 +58,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <ShareIcon />
                         </div>
                         <div class="transition-all duration-300 border-b-[1px] py-[18px] flex-grow" :class="{ 'border-[#EEF1F8]': useThemeStore().theme === 'light', 'border-[#ffffff04]': useThemeStore().theme === 'dark' }">
-                            <a class="text-[14px] text-[#4F72C6] font-bold" href="#">Share</a>
+                            <a class="text-[14px] text-[#818BA5] font-bold" href="#">Share</a>
                         </div>
                     </div>
                 </div>

@@ -25,9 +25,9 @@ const props = defineProps({
         </div>
         <div class="flex flex-col">
             <span class="text-[18px] font-bold whitespace-nowrap"
-            :class="{ 'text-[#5F7097]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }">{{ props.name }}</span>
-            <span class="text-[10px] text-[#5F7097] whitespace-nowrap"
-            :class="{ 'text-[#5F7097]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }"># {{ props.tag }}</span>
+            :class="{ 'text-[#1E4571]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }">{{ props.name }}</span>
+            <span class="text-[10px] whitespace-nowrap"
+            :class="{ 'text-[#1E4571]': useThemeStore().theme === 'light', 'text-white': useThemeStore().theme === 'dark' }"># {{ props.tag }}</span>
         </div>
     </div>
 </template>
