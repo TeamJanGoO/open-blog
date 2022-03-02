@@ -9,6 +9,7 @@ import MyButton from './sub-components/MyButton.vue'
 import MyProfileBadge from './sub-components/MyProfileBadge.vue'
 
 import { useThemeStore } from '@/stores/themeStore'
+import router from '@/router'
 </script>
 
 <template>
@@ -21,7 +22,7 @@ import { useThemeStore } from '@/stores/themeStore'
                     <img v-else class="w-full h-[32px]" src="@/assets/logo-dark.svg" alt="Team JanGoO Blog Logo Dark SVG">
                 </div>
                 <div class="flex flex-col w-full">
-                    <div class="w-full flex gap-[29px] items-center">
+                    <div @click="router.push('/')" class="w-full flex gap-[29px] items-center">
                         <div>
                             <FeedIcon />
                         </div>
@@ -29,7 +30,7 @@ import { useThemeStore } from '@/stores/themeStore'
                             <a class="text-[14px] text-[#818BA5] font-bold" href="#">Feed</a>
                         </div>
                     </div>
-                    <div class="w-full flex gap-[29px] items-center">
+                    <div @click="router.push('/tags')" class="w-full flex gap-[29px] items-center">
                         <div>
                             <HashIcon />
                         </div>

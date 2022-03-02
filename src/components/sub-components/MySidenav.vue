@@ -7,6 +7,7 @@ import ShareIcon from '@/assets/icons/ShareIcon.vue'
 
 import { ref } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
+import router from '@/router'
 
 const states = ref(['active', 'default', 'default', 'default', 'default'])
 
@@ -22,8 +23,9 @@ const hoverDeactivate = (i: number) => {
     }
 }
 
-const clickActivate = (i: number) => {
+const clickActivate = (i: number, p: any) => {
     states.value[i] = 'active'
+    router.push(p)
     for (let j = 0; j < states.value.length; j++) {
         if (j !== i) {
             states.value[j] = 'default'
@@ -37,7 +39,7 @@ const clickActivate = (i: number) => {
         <div
             @mouseenter="hoverActivate(0)"
             @mouseleave="hoverDeactivate(0)"
-            @click="clickActivate(0)"
+            @click="clickActivate(0, '/')"
             class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[0] === 'active' }"
         >
@@ -47,7 +49,7 @@ const clickActivate = (i: number) => {
         <div
             @mouseenter="hoverActivate(1)"
             @mouseleave="hoverDeactivate(1)"
-            @click="clickActivate(1)"
+            @click="clickActivate(1, '/tags')"
             class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[1] === 'active' }"
         >
@@ -57,7 +59,7 @@ const clickActivate = (i: number) => {
         <div
             @mouseenter="hoverActivate(2)"
             @mouseleave="hoverDeactivate(2)"
-            @click="clickActivate(2)"
+            @click="clickActivate(2, '/subscribe')"
             class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[2] === 'active' }"
         >
@@ -67,7 +69,7 @@ const clickActivate = (i: number) => {
         <div
             @mouseenter="hoverActivate(3)"
             @mouseleave="hoverDeactivate(3)"
-            @click="clickActivate(3)"
+            @click="clickActivate(3, '/contact')"
             class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[3] === 'active' }"
         >
@@ -77,7 +79,7 @@ const clickActivate = (i: number) => {
         <div
             @mouseenter="hoverActivate(4)"
             @mouseleave="hoverDeactivate(4)"
-            @click="clickActivate(4)"
+            @click="clickActivate(4, '/share')"
             class="transition-all duration-300 tooltip p-2 cursor-pointer"
             :class="{ 'activated': states[4] === 'active' }"
         >
