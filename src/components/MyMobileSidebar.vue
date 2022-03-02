@@ -38,7 +38,7 @@ import router from '@/router'
                             <a class="text-[14px] text-[#818BA5] font-bold" href="#">Topics</a>
                         </div>
                     </div>
-                    <div class="w-full flex gap-[29px] items-center">
+                    <div @click="router.push('/')" class="w-full flex gap-[29px] items-center">
                         <div>
                             <BellIcon />
                         </div>
@@ -46,7 +46,7 @@ import router from '@/router'
                             <a class="text-[14px] text-[#818BA5] font-bold" href="#">Subscribe</a>
                         </div>
                     </div>
-                    <div class="w-full flex gap-[29px] items-center">
+                    <div @click="router.push('/contact')" class="w-full flex gap-[29px] items-center">
                         <div>
                             <MailIcon />
                         </div>
@@ -54,7 +54,7 @@ import router from '@/router'
                             <a class="text-[14px] text-[#818BA5] font-bold whitespace-nowrap" href="#">Contact Us</a>
                         </div>
                     </div>
-                    <div class="w-full flex gap-[29px] items-center">
+                    <div @click="router.push('/')" class="w-full flex gap-[29px] items-center">
                         <div>
                             <ShareIcon />
                         </div>

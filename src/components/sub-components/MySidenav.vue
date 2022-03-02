@@ -59,7 +59,7 @@ const clickActivate = (i: number, p: any) => {
         <div
             @mouseenter="hoverActivate(2)"
             @mouseleave="hoverDeactivate(2)"
-            @click="clickActivate(2, '/subscribe')"
+            @click="clickActivate(2, '/')"
             class="tooltip px-2 pt-2 pb-[36px] cursor-pointer"
             :class="{ 'activated': states[2] === 'active' }"
         >
@@ -79,7 +79,7 @@ const clickActivate = (i: number, p: any) => {
         <div
             @mouseenter="hoverActivate(4)"
             @mouseleave="hoverDeactivate(4)"
-            @click="clickActivate(4, '/share')"
+            @click="clickActivate(4, '/')"
             class="transition-all duration-300 tooltip p-2 cursor-pointer"
             :class="{ 'activated': states[4] === 'active' }"
         >
